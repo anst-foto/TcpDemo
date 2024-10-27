@@ -1,21 +1,24 @@
-﻿using System.Net;
-using System.Net.Sockets;
-using System.Text;
+﻿using TcpDemo.Lib;
 
-var ipPoint = new IPEndPoint(IPAddress.Any, 8888);
-using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-socket.Bind(ipPoint);
+var socket = TcpInit.CreateSocketServer(8888);
 socket.Listen();
 Console.WriteLine("Сервер запущен. Ожидание подключений...");
 
 using var client = await socket.AcceptAsync();
 Console.WriteLine($"Адрес подключенного клиента: {client.RemoteEndPoint}");
 
-await using var stream = new NetworkStream(client);
-var byteArray = new byte[1024];
-var bytes = await stream.ReadAsync(byteArray);
-var response = Encoding.UTF8.GetString(byteArray, 0, bytes);
-Console.WriteLine(response);
+var tcpMessage = new TcpMessage(client);
+while (true)
+{
+    var message = await tcpMessage.ReadMessageAsync();
+    Console.WriteLine($"Получено сообщение: {message}");
 
-var message = Encoding.UTF8.GetBytes($"Ваше сообщение: {response} получено!");
-await stream.WriteAsync(message);
+    await tcpMessage.SendMessageAsync($"Ваше сообщение: {message} получено!");
+    
+    if (message == "exit")
+    {
+        break;
+    }
+}
+
+Console.WriteLine("Сервер остановлен.");

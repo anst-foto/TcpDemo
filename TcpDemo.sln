@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpDemo.Server", "TcpDemo.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpDemo.Client", "TcpDemo.Client\TcpDemo.Client.csproj", "{091D0C3B-576D-441C-96CD-BA2755AE4292}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpDemo.Lib", "TcpDemo.Lib\TcpDemo.Lib.csproj", "{C1EC0988-817F-4920-A668-AD0DBFAD11B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpDemo.ClientGUI", "TcpDemo.ClientGUI\TcpDemo.ClientGUI.csproj", "{2F0D9738-7E35-4D0E-B9A8-9D8E708A4031}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{091D0C3B-576D-441C-96CD-BA2755AE4292}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{091D0C3B-576D-441C-96CD-BA2755AE4292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{091D0C3B-576D-441C-96CD-BA2755AE4292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1EC0988-817F-4920-A668-AD0DBFAD11B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EC0988-817F-4920-A668-AD0DBFAD11B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EC0988-817F-4920-A668-AD0DBFAD11B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EC0988-817F-4920-A668-AD0DBFAD11B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F0D9738-7E35-4D0E-B9A8-9D8E708A4031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0D9738-7E35-4D0E-B9A8-9D8E708A4031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0D9738-7E35-4D0E-B9A8-9D8E708A4031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0D9738-7E35-4D0E-B9A8-9D8E708A4031}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
